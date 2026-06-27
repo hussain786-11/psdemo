@@ -26,4 +26,7 @@ public class StudentService {
     public Student getStudent(long id){
         return studentRepo.getReferenceById(id);
     }
+    public Student getStudentByName(String name){
+        return studentRepo.findByName(name);
+    }
 }

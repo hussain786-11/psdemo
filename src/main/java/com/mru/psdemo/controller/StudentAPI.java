@@ -22,7 +22,7 @@ public class StudentAPI {
     StudentService studentService;
 
     @PostMapping("/create")
-    Student creaStudent(@RequestBody Student student){
+    Student createStudent(@RequestBody Student student){
 
         return studentService.createStudent(student);
     }
@@ -35,5 +35,9 @@ public class StudentAPI {
     @GetMapping("/get/{id}")
     Student getStudent(@PathVariable long id){
         return studentService.getStudent(id);
+    }
+    @GetMapping("/getByName/{name}")
+    Student getStudentByName(@PathVariable String name){
+        return studentService.getStudentByName(name);
     }
 }
